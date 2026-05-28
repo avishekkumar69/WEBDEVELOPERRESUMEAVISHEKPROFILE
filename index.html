@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avishek Kumar - Full Stack Developer Resume</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue/Grey */
+            --accent-color: #3498db;  /* Bright Blue */
+            --text-color: #333;
+            --light-bg: #f4f7f6;
+            --border-color: #ddd;
+            --section-gap: 25px;
+            --success-color: #27ae60; /* Green for meeting button */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #e9e9e9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 40px 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 4px;
+        }
+
+        /* Header Section */
+        header {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+            text-align: center; 
+        }
+
+        .header-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .header-text {
+            text-align: center; 
+            margin-top: 15px;
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .title {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .profile-pic {
+            flex-shrink: 0;
+            margin: 0 auto;
+        }
+
+        .profile-pic img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            background-color: #eee; 
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+            color: #555;
+            background-color: #f9f9f9;
+            padding: 12px 15px;
+            border-radius: 5px;
+            justify-content: center; 
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info a {
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent-color);
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: var(--section-gap);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            background-color: var(--light-bg);
+            padding: 10px 15px;
+            border-left: 5px solid var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Experience & Education Lists */
+        .item-card {
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            flex-wrap: wrap; 
+            align-items: baseline; 
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 2px; 
+        }
+
+        .item-header span:first-child {
+            flex-grow: 1; 
+        }
+
+        .item-header div {
+            margin-left: 20px; 
+            font-weight: normal; 
+            color: #555;
+            white-space: nowrap; 
+        }
+
+        .item-sub {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .grade-highlight {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* Projects Section */
+        .project-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .project-title {
+            font-weight: bold;
+            font-size: 1.15rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .tech-stack {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        .project-links {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed #e0e0e0;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        /* Personal Details Table */
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .details-table td {
+            padding: 10px 5px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .details-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .details-table td:first-child {
+            font-weight: 600;
+            width: 180px;
+            color: #555;
+        }
+
+        /* --- REFERENCES STYLING --- */
+        .references-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 25px;
+        }
+
+        .ref-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .ref-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--primary-color);
+        }
+
+        .ref-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .ref-title {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .ref-org {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .ref-desc {
+            font-size: 0.85rem;
+            color: #555;
+            background: #f1f4f6;
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .ref-contact {
+            font-size: 0.85rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* --- NEW INTERVIEW REQUEST STYLING --- */
+        .interview-section {
+            background-color: #f0faf4;
+            border: 2px solid var(--success-color);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 35px;
+            margin-bottom: 35px;
+        }
+
+        .interview-section h2 {
+            background-color: transparent;
+            border-left: none;
+            color: var(--primary-color);
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .interview-section p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .meeting-btn {
+            display: inline-block;
+            background-color: var(--success-color);
+            color: white !important;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+
+        .meeting-btn:hover {
+            background-color: #219150;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .container { 
+                box-shadow: none; 
+                margin: 0; 
+                width: 100%; 
+                max-width: 100%; 
+                padding: 0; 
+            }
+            .contact-info { flex-wrap: wrap; }
+            a { text-decoration: none; color: black; }
+            .header-wrapper { flex-wrap: nowrap; }
+            .project-card { break-inside: avoid; border: 1px solid #ddd; }
+            .item-header { flex-wrap: wrap !important; }
+            .ref-card { break-inside: avoid; border: 1px solid #ccc; }
+            
+            /* Ensure Interview section prints cleanly */
+            .interview-section {
+                border: 2px solid #555;
+                background-color: #f5f5f5 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .meeting-btn {
+                background-color: #555 !important;
+                color: white !important;
+                text-decoration: none;
+                box-shadow: none;
+            }
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            h1 { font-size: 2rem; }
+            .header-wrapper { text-align: center; }
+            .profile-pic { margin: 0 0 15px 0; }
+            .item-header { flex-direction: column; } 
+            .item-header div { margin-left: 0; margin-top: 2px; }
+            .contact-info { flex-direction: column; gap: 8px; }
+            .references-grid { grid-template-columns: 1fr; }
+            
+            .meeting-btn {
+                display: block;
+                width: 80%;
+                margin: 0 auto;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <div class="header-wrapper">
+                <div class="profile-pic">
+                    <img src="AVISHEKPHOTO.jpg" alt="Avishek Kumar Profile Photo">
+                </div>
+                <div class="header-text">
+                    <h1>Avishek Kumar</h1>
+                    <div class="title">Full Stack Developer</div>
+                    <div style="margin-top: 5px;"><a href="https://avishekkumar69.github.io/avishekresumeFullstackwebdeveloper/" target="_blank" rel="noopener noreferrer" style="color:#777; text-decoration:none; font-size: 0.9rem;">AVISHEKRESUMEFULLSTACKDEVELOPERPROFILE</a></div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <span>☎ 9631044795</span>
+                <span>✉<a href="mailto:avishek15091969@zohomail.in ">avishek15091969@zohomail.in </a></span>
+                <span>📍 Samastipur, Bihar, India</span>
+            </div>
+        </header>
+
+        <!-- SUMMARY -->
+        <section>
+            <h2>Professional Summary</h2>
+            <p>Highly motivated and results-driven Full Stack Developer with strong expertise in designing, developing, and deploying scalable web applications. Skilled in ASP.NET, PHP, JavaScript frameworks, and modern database technologies. Experienced in working with SQL Server, MySQL, MariaDB, PostgreSQL, and MongoDB along with server tools like Apache and phpMyAdmin. Strong problem-solving skills, quick learner, and passionate about building efficient applications.</p>
+        </section>
+
+        <!-- SKILLS -->
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <p>HTML5, CSS3, JavaScript (ES6+), React.js, Angular, Tailwind CSS, Bootstrap</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <p>ASP.NET, C#, PHP, Node.js, Java, Python, REST APIs</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Database & Tools</h3>
+                    <p>SQL Server, MySQL, PostgreSQL, MongoDB, VS Code, Git, IIS, XAMPP</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <p>English (Professional), Hindi (Native)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section>
+            <h2>Key Projects</h2>
+            
+            <div class="project-card">
+                <div class="project-title">School Management System (Current)</div>
+                <span class="tech-stack">HTML5 | CSS, JavaScript, Node.js | Role-Based Auth</span>
+                <p>Role-based dashboard system with secure database integration and analytics. Handles student enrollment, attendance, and grading.</p>
+                <div class="project-links">
+                    <a href="https://avishekkumar69.github.io/schoolmanagmentproejctdisplay/" target="_blank">🔗 View Live Project</a>
+                    <a href="https://avishekkumar69.github.io/schoolmanagmentproejctdisplay/" target="_blank">📂 Source Code / GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">Library Management System</div>
+                <span class="tech-stack">HTML, CSS, JavaScript | Node.js</span>
+                <p>Comprehensive system for book tracking, inventory management, issue/return logic, and reporting.</p>
+                <div class="project-links">
+                    <a href="https://avishekkumar69.github.io/LibraryManagementSystepproejctDisplay/" target="_blank">🔗 View Live Project</a>
+                    <a href="https://avishekkumar69.github.io/LibraryManagementSystepproejctDisplay/" target="_blank">📂 Source Code / GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">Hospital Management System</div>
+                <span class="tech-stack">Full Stack | HTML, CSS, JavaScript | Node.js</span>
+                <p>Handles patient registration, billing processes, appointment scheduling, and inventory systems.</p>
+                <div class="project-links">
+                    <a href="https://avishekkumar69.github.io/hospitalmanagmentprojectdisplay/" target="_blank">🔗 View Live Project</a>
+                    <a href="https://avishekkumar69.github.io/hospitalmanagmentprojectdisplay/" target="_blank">📂 Source Code / GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">Lpg Gas Agency Related Project</div>
+                <span class="tech-stack">Full Stack | HTML, CSS, JavaScript | Node.js</span>
+                <p>Built a comprehensive web solution for Bharat Gas distributors to automate customer bookings, process billing, and manage cylinder inventory using HTML, CSS, and JavaScript.</p>
+                <div class="project-links">
+                    <a href="https://avishekkumar69.github.io/LPGRELATEDPROEJCT/" target="_blank">🔗 View Live Project</a>
+                    <a href="https://avishekkumar69.github.io/LPGRELATEDPROEJCT/" target="_blank">📂 Source Code / GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">Confederation Horticulture Association of India</div>
+                <span class="tech-stack">Full Stack | HTML, CSS, JAVA SCRIPT | Node.js</span>
+                <p>This project is a responsive Single Page Application designed for the Confederation Horticulture Association of India, featuring a nature-inspired interface and a horticulture-themed background. It seamlessly integrates dynamic member directories, event management, and interactive navigation without page reloads, ensuring a professional user experience across all devices.</p>
+                <div class="project-links">
+                    <a href="https://avishekkumar69.github.io/ConfederationHorticultureAssocationofIndia/" target="_blank" rel="noopener noreferrer">🔗 View Live Project</a>
+                    <a href="https://avishekkumar69.github.io/ConfederationHorticultureAssocationofIndia/" target="_blank" rel="noopener noreferrer">📂 Source Code / GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">Lt. Amit Memorial Rural Institute for Transform</div>
+                <span class="tech-stack">Full Stack Developer | HTML, CSS, JAVA SCRIPT | Node.js</span>
+                <p>Lt. Amit made the supreme sacrifice for the nation. The Lt. Amit Memorial Foundation was established to keep his spirit of service alive. Despite various government schemes, many families of fallen soldiers face significant challenges in accessing quality education, healthcare, and sustainable livelihoods.</p>
+                <div class="project-links">
+                    <a href="https://avishekkumar69.github.io/Lt.-Amit-MemiralFoundation-/" target="_blank" rel="noopener noreferrer">🔗 View Live Project</a>
+                    <a href="https://avishekkumar69.github.io/Lt.-Amit-MemiralFoundation-/" target="_blank" rel="noopener noreferrer">📂 Source Code / GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section>
+            <h2>Professional Experience</h2>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <span>Full Stack Developer</span>
+                    <div>2024-2025</div>
+                </div>
+                <span class="item-sub">Web Development Firm</span>
+                <ul>
+                    <li>Developed scalable web applications using ASP.NET MVC.</li>
+                    <li>Designed complex database systems and optimized queries.</li>
+                    <li>Implemented Authentication & Role-Based Authorization.</li>
+                    <li>Ensured server-side validation and security compliance.</li>
+                </ul>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <span>Backend Developer (EdTech)</span>
+                    <div>2024</div>
+                </div>
+                <span class="item-sub">Educational Platform</span>
+                <ul>
+                    <li>Developed educational web platforms.</li>
+                    <li>Managed backend systems and database integrations.</li>
+                    <li>Built dashboards and reports for administration.</li>
+                </ul>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <span>Client-Side Developer</span>
+                    <div>2024</div>
+                </div>
+                <ul>
+                    <li>Developed client-side applications.</li>
+                    <li>Handled API integration for third-party services.</li>
+                </ul>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <span>Data Operations & Billing</span>
+                    <div>2015-2023</div>
+                </div>
+                <ul>
+                    <li>Managed billing and data entry operations.</li>
+                    <li>Handled daily data management and reporting.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section>
+            <h2>Education</h2>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <span>Diploma in Web Development</span>
+                    <span>Dec 2024</span>
+                </div>
+                <span class="item-sub">CSDT IT Solution</span>
+                <div class="item-desc">Specialized in modern full-stack web technologies, focusing on dynamic website creation and database management.</div>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <span>Diploma in Computer Engineering</span>
+                    <span>1997</span>
+                </div>
+                <span class="item-sub">Dayananda Sagar Institute of Technology, Bangalore</span>
+                <div class="item-desc">Core foundation in computer science principles and hardware engineering.</div>
+                <div class="grade-highlight">Percentage: 49.73%</div>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <span>Intermediate (12th)</span>
+                    <span>1987</span>
+                </div>
+                <span class="item-sub">Bihar Board</span>
+                <div class="grade-highlight">Percentage: 49%</div>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <span>Matriculation (10th)</span>
+                    <span>1985</span>
+                </div>
+                <span class="item-sub">Bihar Board</span>
+                <div class="grade-highlight">Percentage: 68%</div>
+            </div>
+        </section>
+
+        <!-- PERSONAL DETAILS -->
+        <section>
+            <h2>Personal Details</h2>
+            <table class="details-table">
+                <tr>
+                    <td>Date of Birth:</td>
+                    <td>15-09-1969</td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>Male</td>
+                </tr>
+                <tr>
+                    <td>Nationality:</td>
+                    <td>Indian</td>
+                </tr>
+                <tr>
+                    <td>Father's Name:</td>
+                    <td>Dr. Janki Raman Prasad Singh</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- REFERENCES SECTION -->
+        <section>
+            <h2>Eminent References</h2>
+            <div class="references-grid">
+                
+                <!-- Reference 1 -->
+                <div class="ref-card">
+                    <img src="Rajeshsinghimage.jfif" alt="Mr. Rajesh Singh" class="ref-img">
+                    <h3 class="ref-name">Mr. Rajesh Singh</h3>
+                    <div class="ref-title">Joint Secretary</div>
+                    <div class="ref-org">Ministry of Electronics and Information Technology, Govt of India, New Delhi</div>
+                    <div class="ref-desc">
+                        "Has closely observed Avishek's technical dedication and ability to deliver complex web solutions suitable for government standards."
+                    </div>
+                    <div class="ref-contact">📞 +91-9868438253</div>
+                </div>
+
+                <!-- Reference 2 -->
+                <div class="ref-card">
+                    <img src="HPSINGH.jfif" alt="Dr. H.P. Singh" class="ref-img">
+                    <h3 class="ref-name">Dr. H.P. Singh</h3>
+                    <div class="ref-title">Chairman & Founder President</div>
+                    <div class="ref-org">Horticulture Association of India</div>
+                    <div class="ref-desc">
+                        "Interacted with Avishek regarding the digital transformation of the Horticulture Association. Highly impressed by his coding efficiency and professionalism."
+                    </div>
+                    <div class="ref-contact">📞 +91-9582898983, 9810013664, +91-9971350110</div>
+                </div>
+
+                <!-- Reference 3 -->
+                <div class="ref-card">
+                    <img src="Photo-of-Dr.-Babita-Singh.jpg" alt="Dr. Babita Singh" class="ref-img">
+                    <h3 class="ref-name">Dr. Babita Singh</h3>
+                    <div class="ref-title">Senior Consultant</div>
+                    <div class="ref-org">Agriculture Division, NITI Aayog</div>
+                    <div class="ref-desc">
+                        "Familiar with Avishek's work ethic and problem-solving capabilities in the agricultural tech domain."
+                    </div>
+                    <div class="ref-contact">📞 +91-7042241983</div>
+                </div>
+
+                <!-- Reference 4 -->
+                <div class="ref-card">
+                    <img src="Neeta Singh.jpeg" alt="Neeta Singh" class="ref-img">
+                    <h3 class="ref-name">Neeta Singh</h3>
+                    <div class="ref-title">Director</div>
+                    <div class="ref-org">Aurohill Technology</div>
+                    <div class="ref-desc">
+                        "Directly overseen Avishek's full-stack development projects. Confirms his strong command over backend logic and frontend design."
+                    </div>
+                    <div class="ref-contact">📞 +91-8178350197</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ONLINE MEETING / INTERVIEW REQUEST SECTION -->
+        <div class="interview-section">
+            <h2>Request for Online Interview</h2>
+            <p>I am highly enthusiastic about bringing my technical expertise to your esteemed organization. I am readily available for an online meeting or interview to discuss my projects, technical skills, and how I can contribute to your team's success.</p>
+            <!-- IMPORTANT: Replace the '#' below with your actual Google Meet, Zoom, or Calendly link -->
+            <a href="https://us05web.zoom.us/j/2160323889?pwd=Sb3wnxWvfFDkhVmNlKGYYbPJNjMeaG.1" target="_blank" rel="noopener noreferrer" class="meeting-btn">📅 Schedule an Online Meeting</a>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <!-- Updated footer text since references are now attached -->
+            <p><strong>Eminent References are attached above.</strong></p>
+            <br>
+            <p>Avishek Kumar</p>
+        </footer>
+    </div>
+</body>
+</html>
